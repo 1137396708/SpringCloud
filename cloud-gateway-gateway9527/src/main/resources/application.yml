@@ -44,6 +44,8 @@ spring:
         - id: payment_routh2
           #          uri: http://localhost:8001
           uri: lb://cloud-payment-service
+          filters:
+            - AddRequestHeader=X-Request-Foo, Bar
           predicates:
             - Path=/payment/lb/**
             - After=2020-12-29T11:21:17.297+08:00[Asia/Shanghai]
