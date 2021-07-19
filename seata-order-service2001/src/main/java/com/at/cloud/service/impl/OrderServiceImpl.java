@@ -42,7 +42,7 @@ public class OrderServiceImpl implements OrderService {
         log.info("------------->订单微服务开始调用账户,做扣减 账户余额");
         accountService.decrease(order.getUserId(), order.getMoney());
         log.info("------------->订单微服务开始调用账户,做扣减end");
-
+//
         log.info("------------->修改订单状态开始");
         orderDao.update(order.getUserId(), 0);
         log.info("------------->修改订单状态结束");
