@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
     public void create(Order order) {
         log.info("------------->开始新建订单");
         orderDao.create(order);
-
+//
         log.info("------------->订单微服务开始调用库存,做扣减 数量");
         storageService.decrease(order.getProductId(), order.getCount());
         log.info("------------->订单微服务开始调用库存,做扣减end");
